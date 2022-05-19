@@ -1,0 +1,19 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+
+.nav{
+    display: flex;
+    color: #F9FAF8;
+    font-size: 72px;
+    font-family: 'Bangers', cursive;
+    background-color: #1F2937;
+    padding: 20px 30px;
+    justify-content: center;
+}
+
+.nav div{
+    margin: 0 10px;
+}
+
