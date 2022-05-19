@@ -81,4 +81,4 @@ let game = () =>{
         document.getElementById("winner").innerText = "Computer is the winner!";
     }
 }
-game();
+// game();

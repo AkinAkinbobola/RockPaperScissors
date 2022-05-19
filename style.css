@@ -12,8 +12,36 @@ body{
     padding: 20px 30px;
     justify-content: center;
 }
-
+.main{
+    margin: 40px;
+}
 .nav div{
     margin: 0 10px;
 }
 
+.output{
+    display: flex;
+    gap: 80px;
+    justify-content: center;
+}
+
+.text{
+    font-family: 'Bangers', cursive;
+    margin-top: 12px;
+    font-size: 40px;
+}
+
+.choices{
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    gap: 80px
+}
+
+.choices img{
+    width: 200px;
+    transition: transform .2s;
+}
+.choices img:hover{
+    transform: scale(1.2);
+}
