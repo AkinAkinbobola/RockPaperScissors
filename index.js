@@ -37,24 +37,19 @@ let playRound = (playerSelection, computerSelection) =>{
     }
 }
 
-let playerCount = 0;
-let compCount = 0;
 let playerScore = document.getElementById("player");
 let compScore = document.getElementById("computer");
 
 let game = (result) =>{
     if(/win/.test(result)){
-        playerCount += 1;
-        playerScore.innerText = `${playerCount}`
+        let score = Number(playerScore.innerText) + 1;
+        playerScore.innerText = `${score}`;
         
     }else if (/lose/.test(result)){
-        compCount += 1;
-        compScore.innerText = `${compCount}`
+        let score = Number(compScore.innerText) + 1;
+        compScore.innerText = `${score}`
         }
     }
-
-    
-
 
 const choices = document.querySelectorAll("img");
 
@@ -62,23 +57,21 @@ const choices = document.querySelectorAll("img");
 choices.forEach(choice => choice.addEventListener("click", function(e){
     const userChoice = this.getAttribute("id");
     const round = playRound(userChoice, computerPlay);
-    document.getElementById("winner").innerText = round;
-    const roundRes = round;
-    game(roundRes);
 
 
-    // if(playerScore.innerText < 5 && compScore < 5){
-    //     document.getElementById("winner").innerText = round;
-    // }
-    // else if(playerScore.innerText == 5){
-    //     document.getElementById("winner").innerText = "You are the winner!";
-    // }
-    // else if (compScore.innerText == 5){
-    //     document.getElementById("winner").innerText = "Computer is the winner!";
-    // }else{
-    //     playerScore.innerText = 0;
-    //     compScore.innerText = 0;
-    // }
-}))
+    if(playerScore.innerText < 5 && compScore.innerText < 5){
+        document.getElementById("winner").innerText = round;
+        game(round);
+    }
+    
+    if(playerScore.innerText == 5){
+        document.getElementById("winner").innerText = "YOU BEAT THE BOT!!!";
+    }else if(compScore.innerText == 5){
+        document.getElementById("winner").innerText = "YOU LOST TO A BOT?!??!!";
+    }
+
+    
+}));
+
 
 
